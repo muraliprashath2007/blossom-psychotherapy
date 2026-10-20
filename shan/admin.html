@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blossom Admin Portal | Practice Management & Site Editor</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  
+  <!-- FontAwesome Icons & Stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- ==================== 1. LOCK SCREEN / PASSCODE GATE ==================== -->
+  <div class="lock-screen-overlay" id="adminLockScreen">
+    <div class="lock-card">
+      <div class="lock-logo-badge">
+        <img src="assets/images/logo.png" alt="Blossom Psychotherapy">
+      </div>
+      <h3 class="lock-title">Practitioner Portal</h3>
+      <p class="lock-subtitle">Blossom Psychotherapy & Wellness Control Center</p>
+
+      <form id="adminLoginForm">
+        <div class="lock-input-group">
+          <i class="fas fa-key lock-input-icon"></i>
+          <input type="password" id="adminPasscodeInput" class="lock-input" placeholder="Enter Admin PIN" autocomplete="current-password" autofocus required>
+        </div>
+        <button type="submit" class="lock-btn">
+          <i class="fas fa-lock-open"></i> Unlock Dashboard
+        </button>
+      </form>
+
+      <p class="lock-hint">
+        Default PIN: <code>1234</code> or <code>blossom2026</code>
+      </p>
+      
+      <p style="margin-top: 16px;">
+        <a href="index.html" style="color: #9cb8b2; font-size: 0.8rem; text-decoration: none;">
+          <i class="fas fa-arrow-left"></i> Return to Public Website
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <!-- ==================== 2. ADMIN MAIN INTERFACE ==================== -->
+  <div class="admin-container" id="adminMainContainer" style="display: none;">
+    
+    <!-- Mobile Sidebar Backdrop -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-header">
+        <div style="display: flex; align-items: center; gap: 12px; min-width: 0;">
+          <div class="sidebar-logo">
+            <img src="assets/images/logo.png" alt="Blossom Psychotherapy">
+          </div>
+          <div class="sidebar-brand">
+            <h5>Blossom.</h5>
+            <span>Admin Portal</span>
+          </div>
+        </div>
+        <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close Sidebar">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-label">Core Control</div>
+        <div class="sidebar-item active" data-tab="overview">
+          <i class="fas fa-chart-pie"></i>
+          <span>Overview</span>
+        </div>
+        <div class="sidebar-item" data-tab="bookings">
+          <i class="fas fa-calendar-check"></i>
+          <span>Appointments</span>
+          <span class="badge" id="sidebarBookingBadge">0</span>
+        </div>
+        <div class="sidebar-item" data-tab="profile">
+          <i class="fas fa-user-md"></i>
+          <span>Practitioner Bio</span>
+        </div>
+
+        <div class="nav-section-label">Site Content</div>
+        <div class="sidebar-item" data-tab="pricing">
+          <i class="fas fa-tags"></i>
+          <span>Pricing & Plans</span>
+        </div>
+        <div class="sidebar-item" data-tab="slots">
+          <i class="fas fa-clock"></i>
+          <span>Time Slots</span>
+        </div>
+        <div class="sidebar-item" data-tab="contact">
+          <i class="fas fa-address-book"></i>
+          <span>Contact & Helpline</span>
+        </div>
+        <div class="sidebar-item" data-tab="testimonials">
+          <i class="fas fa-comment-dots"></i>
+          <span>Reviews & FAQ</span>
+        </div>
+
+        <div class="nav-section-label">System</div>
+        <div class="sidebar-item" data-tab="settings">
+          <i class="fas fa-sliders-h"></i>
+          <span>Backup & Security</span>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="index.html" target="_blank" class="sidebar-footer-btn" style="color: #5eead4;">
+          <i class="fas fa-external-link-alt"></i> Live Site
+        </a>
+        <button class="sidebar-footer-btn" id="adminLogoutBtn">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+      
+      <!-- Top Bar -->
+      <header class="admin-topbar">
+        <div style="display: flex; align-items: center; gap: 10px; min-width: 0; flex: 1;">
+          <button class="mobile-hamburger-btn" id="adminMobileMenuBtn" aria-label="Open Navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="topbar-title">
+            <h2 id="topbarHeaderTitle">Dashboard Overview</h2>
+            <p id="topbarHeaderDesc">Manage your clinical practice, schedule, and website content in real time.</p>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <a href="index.html" target="_blank" class="btn-admin btn-admin-outline" title="Live Site">
+            <i class="fas fa-external-link-alt"></i> <span class="btn-text-responsive">Live Site</span>
+          </a>
+          <button class="btn-admin btn-admin-primary" id="saveAllGlobalBtn" title="Save All Changes">
+            <i class="fas fa-save"></i> <span class="btn-text-responsive">Save All</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="admin-body">
+
+        <!-- ==================== TAB 1: OVERVIEW ==================== -->
+        <section class="admin-tab-pane active" id="pane-overview">
+          
+          <!-- Key Metrics -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon green">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <div class="stat-data">
+                <h4 id="statTotalBookings">0</h4>
+                <p>Appointments Booked</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon teal">
+                <i class="fas fa-rupee-sign"></i>
+              </div>
+              <div class="stat-data">
+                <h4 id="statSingleFee">₹999</h4>
+                <p>Single Session Fee</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon blue">
+                <i class="fas fa-user-check"></i>
+              </div>
+              <div class="stat-data">
+                <h4 id="statPractitionerName">Shaanthini</h4>
+                <p>Solo Practitioner (Active)</p>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon orange">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="stat-data">
+                <h4 id="statActiveSlots">6 Slots</h4>
+                <p>Daily Availability</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions & Practitioner Banner -->
+          <div class="profile-preview-card">
+            <div class="profile-avatar-box">
+              <img id="overviewAvatar" src="assets/images/shaanthini.jpg" alt="Shaanthini Jayaprakash">
+            </div>
+            <div class="profile-preview-info">
+              <h4 id="overviewName">Shaanthini Jayaprakash</h4>
+              <p id="overviewTitle">Certified Psychotherapist & Wellness Counselor</p>
+              <div class="profile-badges">
+                <span class="badge-pill teal"><i class="fas fa-check-circle"></i> Online Booking Active</span>
+                <span class="badge-pill green"><i class="fab fa-whatsapp"></i> Direct WhatsApp Connected</span>
+                <span class="badge-pill orange"><i class="fas fa-star"></i> 4.98 Rating</span>
+              </div>
+            </div>
+            <div style="margin-left: auto;">
+              <button class="btn-admin btn-admin-outline" onclick="switchTab('profile')">
+                <i class="fas fa-edit"></i> Edit Bio
+              </button>
+            </div>
+          </div>
+
+          <!-- Recent Bookings Panel in Overview -->
+          <div class="admin-panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fas fa-history" style="color: var(--admin-primary); font-size: 1.2rem;"></i>
+                <div>
+                  <h3>Recent Appointment Bookings</h3>
+                  <span>Clients who booked via the website booking modal</span>
+                </div>
+              </div>
+              <button class="btn-admin btn-admin-outline btn-sm" onclick="switchTab('bookings')">
+                View All Appointments <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+            <div class="panel-body" style="padding: 0;">
+              <div class="mobile-table-hint"><i class="fas fa-arrows-left-right"></i> Swipe sideways to view all appointment details</div>
+              <div class="table-responsive">
+                <table class="admin-table">
+                  <thead>
+                    <tr>
+                      <th>Client Name</th>
+                      <th>Phone / WhatsApp</th>
+                      <th>Concern</th>
+                      <th>Mode</th>
+                      <th>Date & Slot</th>
+                      <th>Language</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="overviewRecentBookingsTbody">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== TAB 2: APPOINTMENTS / BOOKINGS ==================== -->
+        <section class="admin-tab-pane" id="pane-bookings">
+          <div class="admin-panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fas fa-clipboard-list" style="color: var(--admin-primary); font-size: 1.2rem;"></i>
+                <div>
+                  <h3>All Patient Appointments</h3>
+                  <span>Manage client session requests, update statuses, or message via WhatsApp</span>
+                </div>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button class="btn-admin btn-admin-outline" onclick="openAddBookingModal()">
+                  <i class="fas fa-plus"></i> Add Walk-in Client
+                </button>
+                <button class="btn-admin btn-admin-outline" onclick="exportBookingsCSV()">
+                  <i class="fas fa-file-export"></i> Export CSV
+                </button>
+                <button class="btn-admin btn-admin-danger" onclick="clearAllBookings()">
+                  <i class="fas fa-trash"></i> Clear All
+                </button>
+              </div>
+            </div>
+            <div class="panel-body" style="padding: 0;">
+              <div class="mobile-table-hint"><i class="fas fa-arrows-left-right"></i> Swipe sideways to view all appointment details</div>
+              <div class="table-responsive">
+                <table class="admin-table">
+                  <thead>
+                    <tr>
+                      <th>Client</th>
+                      <th>Contact</th>
+                      <th>Concern</th>
+                      <th>Session Mode</th>
+                      <th>Date & Time</th>
+                      <th>Language</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="bookingsTableTbody">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== TAB 3: PRACTITIONER BIO & PROFILE ==================== -->
+        <section class="admin-tab-pane" id="pane-profile">
+          <div class="admin-panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fas fa-id-card" style="color: var(--admin-primary); font-size: 1.2rem;"></i>
+                <div>
+                  <h3>Shaanthini Jayaprakash — Practitioner Profile</h3>
+                  <span>Controls the Spotlight Card and Practitioner information on the live site</span>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <form id="profileForm">
+                <div class="form-grid-2">
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="profName">Full Name</label>
+                    <input type="text" id="profName" class="admin-input" required>
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="profTitle">Professional Designation</label>
+                    <input type="text" id="profTitle" class="admin-input" required>
+                  </div>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="profExperience">Experience & Clinical Credentials</label>
+                    <input type="text" id="profExperience" class="admin-input" required>
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="profEducation">Degrees & Education</label>
+                    <input type="text" id="profEducation" class="admin-input" required>
+                  </div>
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-form-label" for="profBio">Professional Biography</label>
+                  <textarea id="profBio" class="admin-textarea" rows="4" required></textarea>
+                </div>
+
+                <div class="form-grid-3">
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="profImage">Photo Path / URL</label>
+                    <input type="text" id="profImage" class="admin-input" placeholder="assets/images/shaanthini.jpg" required>
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="profRating">Rating Display (e.g. 4.98)</label>
+                    <input type="text" id="profRating" class="admin-input">
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="profReviewsCount">Reviews Count (e.g. 500+)</label>
+                    <input type="text" id="profReviewsCount" class="admin-input">
+                  </div>
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-form-label" for="profSpecialties">Clinical Specialties (comma-separated)</label>
+                  <input type="text" id="profSpecialties" class="admin-input" placeholder="Stress & Anxiety, Relationship & Marriage, Depression, Self-Esteem">
+                </div>
+
+                <button type="submit" class="btn-admin btn-admin-primary">
+                  <i class="fas fa-save"></i> Update Practitioner Profile
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== TAB 4: PRICING & PLANS ==================== -->
+        <section class="admin-tab-pane" id="pane-pricing">
+          <div class="admin-panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fas fa-money-bill-wave" style="color: var(--admin-primary); font-size: 1.2rem;"></i>
+                <div>
+                  <h3>Session Pricing & Packages</h3>
+                  <span>Update prices across the pricing section and booking wizard</span>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <form id="pricingForm">
+                <div class="form-grid-2">
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="priceSingle">
+                      Single Session (₹)
+                      <small>— 45 Minute Consultation</small>
+                    </label>
+                    <input type="number" id="priceSingle" class="admin-input" min="1" step="1" required>
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="pricePack3">
+                      3-Session Value Pack (₹)
+                      <small>— Popular Coping Package</small>
+                    </label>
+                    <input type="number" id="pricePack3" class="admin-input" min="1" step="1" required>
+                  </div>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="pricePack6">
+                      6-Session Complete Pack (₹)
+                      <small>— Deep Healing Bundle</small>
+                    </label>
+                    <input type="number" id="pricePack6" class="admin-input" min="1" step="1" required>
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="priceCouple">
+                      Couple Counselling Session (₹)
+                      <small>— 60 Minute Joint Session</small>
+                    </label>
+                    <input type="number" id="priceCouple" class="admin-input" min="1" step="1" required>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-admin btn-admin-primary">
+                  <i class="fas fa-save"></i> Save Pricing Updates
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== TAB 5: TIME SLOTS & SCHEDULE ==================== -->
+        <section class="admin-tab-pane" id="pane-slots">
+          <div class="admin-panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fas fa-business-time" style="color: var(--admin-primary); font-size: 1.2rem;"></i>
+                <div>
+                  <h3>Daily Appointment Slots</h3>
+                  <span>Configure available time slots displayed in the Booking Wizard</span>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <label class="admin-form-label">Active Booking Slots</label>
+              <div class="slots-manager-grid" id="slotsManagerContainer">
+                <!-- Populated dynamically -->
+              </div>
+
+              <div style="margin-top: 24px; display: flex; gap: 12px; align-items: flex-end; max-width: 400px;">
+                <div class="admin-form-group" style="margin-bottom: 0; flex: 1;">
+                  <label class="admin-form-label" for="newSlotTime">Add New Slot</label>
+                  <input type="text" id="newSlotTime" class="admin-input" placeholder="e.g. 05:30 PM">
+                </div>
+                <button type="button" class="btn-admin btn-admin-primary" id="addSlotBtn">
+                  <i class="fas fa-plus"></i> Add Slot
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== TAB 6: CONTACT & HELPLINE ==================== -->
+        <section class="admin-tab-pane" id="pane-contact">
+          <div class="admin-panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fas fa-phone-volume" style="color: var(--admin-primary); font-size: 1.2rem;"></i>
+                <div>
+                  <h3>Contact Channels & WhatsApp Dispatch</h3>
+                  <span>Controls where booking requests, phone calls, and patient inquiries are sent</span>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <form id="contactForm">
+                <div class="form-grid-2">
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="contactWhatsApp">
+                      WhatsApp Dispatch Number
+                      <small>(Digits only with country code, e.g. 919789680259)</small>
+                    </label>
+                    <input type="text" id="contactWhatsApp" class="admin-input" required>
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="contactPhone">
+                      Phone Number for Calls
+                      <small>(e.g. +91 97896 80259)</small>
+                    </label>
+                    <input type="text" id="contactPhone" class="admin-input" required>
+                  </div>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="contactEmail">Practice Email Address</label>
+                    <input type="email" id="contactEmail" class="admin-input" required>
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="contactInstagram">Instagram Handle</label>
+                    <input type="text" id="contactInstagram" class="admin-input" placeholder="blossom._.psychotherapy" required>
+                  </div>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="contactAddress">Practice Address / Location</label>
+                    <input type="text" id="contactAddress" class="admin-input" required>
+                  </div>
+                  <div class="admin-form-group">
+                    <label class="admin-form-label" for="contactTeleManas">National Helpline Number</label>
+                    <input type="text" id="contactTeleManas" class="admin-input" value="14416" required>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn-admin btn-admin-primary">
+                  <i class="fas fa-save"></i> Save Contact Channels
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== TAB 7: REVIEWS & FAQ ==================== -->
+        <section class="admin-tab-pane" id="pane-testimonials">
+          <!-- Testimonials Manager -->
+          <div class="admin-panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fas fa-quote-left" style="color: var(--admin-primary); font-size: 1.2rem;"></i>
+                <div>
+                  <h3>Client Reviews & Testimonials</h3>
+                  <span>Add, modify, or remove patient success stories</span>
+                </div>
+              </div>
+              <button class="btn-admin btn-admin-outline" onclick="openAddReviewModal()">
+                <i class="fas fa-plus"></i> Add Testimonial
+              </button>
+            </div>
+            <div class="panel-body">
+              <div id="testimonialsListContainer" style="display: flex; flex-direction: column; gap: 14px;">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Manager -->
+          <div class="admin-panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fas fa-question-circle" style="color: var(--admin-primary); font-size: 1.2rem;"></i>
+                <div>
+                  <h3>Frequently Asked Questions (FAQ)</h3>
+                  <span>Manage answers to client questions on the website</span>
+                </div>
+              </div>
+              <button class="btn-admin btn-admin-outline" onclick="openAddFaqModal()">
+                <i class="fas fa-plus"></i> Add Question
+              </button>
+            </div>
+            <div class="panel-body">
+              <div id="faqListContainer" style="display: flex; flex-direction: column; gap: 12px;">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== TAB 8: BACKUP, RESET & SECURITY ==================== -->
+        <section class="admin-tab-pane" id="pane-settings">
+          <div class="admin-panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fas fa-shield-alt" style="color: var(--admin-primary); font-size: 1.2rem;"></i>
+                <div>
+                  <h3>Admin Passcode & Security</h3>
+                  <span>Change the PIN or password needed to access this Admin Portal</span>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <form id="passcodeForm" style="max-width: 480px;">
+                <div class="admin-form-group">
+                  <label class="admin-form-label" for="newAdminPasscode">New Admin Passcode</label>
+                  <input type="text" id="newAdminPasscode" class="admin-input" placeholder="e.g. 5678 or mySecret2026" required>
+                </div>
+                <button type="submit" class="btn-admin btn-admin-primary">
+                  <i class="fas fa-key"></i> Update Admin Passcode
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Supabase Cloud Database Configuration -->
+          <div class="admin-panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fas fa-database" style="color: #3ecf8e; font-size: 1.2rem;"></i>
+                <div>
+                  <h3>Supabase Cloud Database</h3>
+                  <span>Connect live PostgreSQL cloud database for client bookings & corporate leads</span>
+                </div>
+              </div>
+              <span id="supabaseStatusBadge" style="padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; background: #fef3c7; color: #b45309;">
+                <i class="fas fa-circle" style="font-size: 0.6rem; margin-right: 4px;"></i> Not Connected
+              </span>
+            </div>
+            <div class="panel-body">
+              <div style="background: rgba(62, 207, 142, 0.08); border: 1px solid rgba(62, 207, 142, 0.25); border-radius: 8px; padding: 14px 18px; margin-bottom: 18px;">
+                <p style="margin: 0; font-size: 0.88rem; color: var(--admin-text-dark); line-height: 1.5;">
+                  <strong>⚡ Client Account:</strong> <code style="background: white; padding: 2px 6px; border-radius: 4px; font-weight: 600;">blossomtherapy06@gmail.com</code><br>
+                  Paste your <strong>Project URL</strong> and <strong>Anon Public Key</strong> from Supabase Dashboard (<a href="https://supabase.com/dashboard" target="_blank" style="color: #059669; text-decoration: underline; font-weight: 600;">Project Settings &gt; API</a>) to sync all client bookings directly to the cloud.
+                </p>
+              </div>
+
+              <form id="supabaseConfigForm" style="max-width: 650px;" onsubmit="handleSaveSupabaseConfig(event)">
+                <div class="admin-form-group">
+                  <label class="admin-form-label" for="supabaseProjectUrl">Supabase Project URL</label>
+                  <input type="url" id="supabaseProjectUrl" class="admin-input" placeholder="https://xxxxxxxxxxxxxxxx.supabase.co" required>
+                </div>
+
+                <div class="admin-form-group">
+                  <label class="admin-form-label" for="supabaseAnonKey">Supabase Anon Public API Key</label>
+                  <input type="text" id="supabaseAnonKey" class="admin-input" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." required>
+                </div>
+
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                  <button type="submit" class="btn-admin btn-admin-primary">
+                    <i class="fas fa-plug"></i> Save & Connect Supabase
+                  </button>
+                  <button type="button" class="btn-admin btn-admin-outline" onclick="testSupabaseConnection()">
+                    <i class="fas fa-sync-alt"></i> Test Connection
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Backup & Restore -->
+          <div class="admin-panel">
+            <div class="panel-header">
+              <div class="panel-title">
+                <i class="fas fa-database" style="color: var(--admin-primary); font-size: 1.2rem;"></i>
+                <div>
+                  <h3>Data Backup & Restore</h3>
+                  <span>Export or import complete website configuration as a JSON file</span>
+                </div>
+              </div>
+            </div>
+            <div class="panel-body">
+              <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <button class="btn-admin btn-admin-outline" onclick="exportConfigJSON()">
+                  <i class="fas fa-download"></i> Export Complete Config (JSON)
+                </button>
+                
+                <label class="btn-admin btn-admin-outline" style="cursor: pointer;">
+                  <i class="fas fa-upload"></i> Import Config (JSON)
+                  <input type="file" id="importConfigFile" accept=".json" style="display: none;" onchange="importConfigJSON(event)">
+                </label>
+
+                <button class="btn-admin btn-admin-danger" onclick="resetToFactoryDefaults()">
+                  <i class="fas fa-undo"></i> Reset to Original Factory Defaults
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Mobile Bottom Navigation Dock (Phones Only) -->
+      <nav class="admin-bottom-nav" id="adminBottomNav">
+        <button class="bottom-nav-item active" data-tab="overview">
+          <i class="fas fa-chart-pie"></i>
+          <span>Overview</span>
+        </button>
+        <button class="bottom-nav-item" data-tab="bookings">
+          <div style="position: relative; display: inline-block;">
+            <i class="fas fa-calendar-check"></i>
+            <span class="bottom-nav-badge" id="bottomNavBookingBadge">0</span>
+          </div>
+          <span>Bookings</span>
+        </button>
+        <button class="bottom-nav-item" data-tab="profile">
+          <i class="fas fa-user-md"></i>
+          <span>Bio</span>
+        </button>
+        <button class="bottom-nav-item" data-tab="settings">
+          <i class="fas fa-sliders-h"></i>
+          <span>Settings</span>
+        </button>
+        <button class="bottom-nav-item" id="bottomNavMoreBtn">
+          <i class="fas fa-th-large"></i>
+          <span>More</span>
+        </button>
+      </nav>
+    </main>
+  </div>
+
+  <!-- ==================== MODAL: ADD MANUAL APPOINTMENT ==================== -->
+  <div class="admin-modal-overlay" id="addBookingModal">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h4><i class="fas fa-calendar-plus" style="color: var(--admin-primary);"></i> Add Walk-in / Offline Booking</h4>
+        <button class="btn-icon" onclick="closeAdminModals()"><i class="fas fa-times"></i></button>
+      </div>
+      <form id="manualBookingForm">
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="manName">Client Name</label>
+          <input type="text" id="manName" class="admin-input" placeholder="e.g. Priya Sundaram" required>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="admin-form-group">
+            <label class="admin-form-label" for="manPhone">Phone / WhatsApp</label>
+            <input type="text" id="manPhone" class="admin-input" placeholder="+91 98765 43210" required>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label" for="manEmail">Email</label>
+            <input type="email" id="manEmail" class="admin-input" placeholder="client@example.com">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="admin-form-group">
+            <label class="admin-form-label" for="manConcern">Concern</label>
+            <select id="manConcern" class="admin-select">
+              <option value="Stress & Anxiety">Stress & Anxiety</option>
+              <option value="Relationship & Marriage">Relationship & Marriage</option>
+              <option value="Depression & Low Mood">Depression & Low Mood</option>
+              <option value="Workplace Burnout">Workplace Burnout</option>
+              <option value="Anger Management">Anger Management</option>
+            </select>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label" for="manMode">Session Mode</label>
+            <select id="manMode" class="admin-select">
+              <option value="Video Call">Video Call</option>
+              <option value="Audio Call">Audio Call</option>
+              <option value="Private Chat">Private Chat</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="admin-form-group">
+            <label class="admin-form-label" for="manDate">Date</label>
+            <input type="date" id="manDate" class="admin-input" required>
+          </div>
+          <div class="admin-form-group">
+            <label class="admin-form-label" for="manTime">Time Slot</label>
+            <input type="text" id="manTime" class="admin-input" placeholder="04:30 PM" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-admin btn-admin-primary" style="width: 100%;">
+          <i class="fas fa-check"></i> Save Appointment
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: ADD / EDIT TESTIMONIAL ==================== -->
+  <div class="admin-modal-overlay" id="addReviewModal">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h4 id="reviewModalTitle"><i class="fas fa-quote-left" style="color: var(--admin-primary);"></i> Add Client Review</h4>
+        <button class="btn-icon" onclick="closeAdminModals()"><i class="fas fa-times"></i></button>
+      </div>
+      <form id="reviewForm">
+        <input type="hidden" id="reviewEditIndex" value="-1">
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="revAuthor">Client Name / Pseudonym</label>
+          <input type="text" id="revAuthor" class="admin-input" placeholder="e.g. Meera N." required>
+        </div>
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="revRole">Tagline / Location / Concern</label>
+          <input type="text" id="revRole" class="admin-input" placeholder="e.g. Chennai • Anxiety Therapy" required>
+        </div>
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="revRating">Rating (Stars)</label>
+          <select id="revRating" class="admin-select">
+            <option value="5" selected>⭐⭐⭐⭐⭐ (5 Stars)</option>
+            <option value="4">⭐⭐⭐⭐ (4 Stars)</option>
+            <option value="3">⭐⭐⭐ (3 Stars)</option>
+          </select>
+        </div>
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="revText">Client Testimonial Review</label>
+          <textarea id="revText" class="admin-textarea" rows="4" placeholder="Enter patient feedback quote..." required></textarea>
+        </div>
+        <button type="submit" class="btn-admin btn-admin-primary" style="width: 100%;">
+          <i class="fas fa-save"></i> Save Testimonial
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: ADD / EDIT FAQ ==================== -->
+  <div class="admin-modal-overlay" id="addFaqModal">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header">
+        <h4 id="faqModalTitle"><i class="fas fa-question-circle" style="color: var(--admin-primary);"></i> Add FAQ Item</h4>
+        <button class="btn-icon" onclick="closeAdminModals()"><i class="fas fa-times"></i></button>
+      </div>
+      <form id="faqForm">
+        <input type="hidden" id="faqEditIndex" value="-1">
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="faqQuestion">Question</label>
+          <input type="text" id="faqQuestion" class="admin-input" placeholder="e.g. Is teletherapy confidential?" required>
+        </div>
+        <div class="admin-form-group">
+          <label class="admin-form-label" for="faqAnswer">Answer</label>
+          <textarea id="faqAnswer" class="admin-textarea" rows="4" placeholder="Enter comprehensive answer..." required></textarea>
+        </div>
+        <button type="submit" class="btn-admin btn-admin-primary" style="width: 100%;">
+          <i class="fas fa-save"></i> Save FAQ Item
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="admin-toast" id="adminToast">
+    <i class="fas fa-info-circle" id="adminToastIcon"></i>
+    <span id="adminToastMsg">Settings updated successfully</span>
+  </div>
+
+  <!-- Supabase Cloud Database & Admin Application Script -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js?v=1.0"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

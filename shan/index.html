@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blossom - Modern Online Therapy & Wellness Platform</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Blossom offers confidential online counselling and therapy via Video, Audio Call, and Chat for stress, anxiety, depression, marriage, relationship, and emotional guidance from certified psychologists in India.">
+  <meta name="keywords" content="online therapy, online counselling India, psychologist near me, depression test, anxiety counselling, marriage counselling, blossom therapy, mental health support">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blossom - Modern Online Therapy & Wellness Platform">
+  <meta property="og:description" content="Talk to verified psychologists online. 100% confidential therapy via Video, Call & Chat.">
+  <meta property="og:image" content="assets/images/meditation_zen.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+  
+  <!-- Stylesheets & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css?v=3.9">
+
+  <!-- Force Start from Top on Refresh across Laptop & Mobile -->
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    if (window.location.hash) {
+      try {
+        history.replaceState(null, document.title, window.location.pathname + window.location.search);
+      } catch (e) {}
+    }
+    window.scrollTo(0, 0);
+  </script>
+
+  <!-- Schema.org Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Blossom Psychotherapy & Wellness",
+    "url": "https://blossomtherapy.in/",
+    "telephone": "+91 97896 80259",
+    "email": "blossomtherapy06@gmail.com",
+    "medicalSpecialty": "Psychotherapy",
+    "priceRange": "₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gurugram",
+      "addressCountry": "India"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ==================== LUXURY BRAND AMBIENT WATERMARK WITH GLOW ==================== -->
+  <div class="site-watermark-backdrop" style="position: fixed; pointer-events: none; z-index: 0;" aria-hidden="true">
+    <div class="site-watermark-inner">
+      <img src="assets/images/logo_watermark.png" alt="" class="site-watermark-img" loading="lazy">
+      <div class="site-watermark-glow"></div>
+    </div>
+  </div>
+
+  <!-- ==================== 1. EMERGENCY HELPLINE TOPBAR ==================== -->
+  <div class="helpline-topbar">
+    <div class="container helpline-container">
+      <div class="helpline-text">
+        <span class="helpline-badge">Support Desk</span>
+        <span>Need emotional support? Call: <strong>+91 97896 80259</strong> | Email: <strong>blossomtherapy06@gmail.com</strong></span>
+      </div>
+      <div class="helpline-links">
+        <a href="tel:9789680259"><i class="fas fa-phone-alt"></i> Call Now</a>
+        <a href="https://instagram.com/blossom._.psychotherapy" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 2. MAIN NAVIGATION ==================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <!-- Logo -->
+      <a href="#" class="brand-logo">
+        <img src="assets/images/logo.png" alt="Blossom Psychotherapy" class="brand-logo-img">
+        <div>
+          Blossom<span class="dot">.</span>
+          <span class="brand-logo-sub">Psychotherapy & Wellness</span>
+        </div>
+      </a>
+
+      <!-- Menu Navigation -->
+      <nav class="nav-menu">
+        <div class="nav-dropdown-wrapper">
+          <a href="#concerns" class="nav-link">
+            Counselling <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
+          </a>
+          <div class="nav-dropdown">
+            <a href="#concerns" class="nav-dropdown-item"><i class="fas fa-bolt" style="color: #f59e0b;"></i> Stress & Anxiety</a>
+            <a href="#concerns" class="nav-dropdown-item"><i class="fas fa-heart" style="color: #ef4444;"></i> Relationship & Marriage</a>
+            <a href="#concerns" class="nav-dropdown-item"><i class="fas fa-cloud-rain" style="color: #3b82f6;"></i> Depression & Low Mood</a>
+            <a href="#concerns" class="nav-dropdown-item"><i class="fas fa-briefcase" style="color: #10b981;"></i> Work Stress & Burnout</a>
+            <a href="#concerns" class="nav-dropdown-item"><i class="fas fa-user-shield" style="color: #8b5cf6;"></i> Self-Esteem & Confidence</a>
+            <a href="#concerns" class="nav-dropdown-item"><i class="fas fa-fire" style="color: #ef4444;"></i> Anger & Emotional Balance</a>
+          </div>
+        </div>
+
+        <a href="#therapists" class="nav-link">Psychologists</a>
+
+        <div class="nav-dropdown-wrapper">
+          <a href="#assessments" class="nav-link">
+            Self-Assessments <i class="fas fa-chevron-down" style="font-size: 0.75rem;"></i>
+          </a>
+          <div class="nav-dropdown">
+            <a href="javascript:void(0)" onclick="openAssessmentModal('phq9')" class="nav-dropdown-item"><i class="fas fa-clipboard-list" style="color: #3b82f6;"></i> Depression Test (PHQ-9)</a>
+            <a href="javascript:void(0)" onclick="openAssessmentModal('gad7')" class="nav-dropdown-item"><i class="fas fa-heartbeat" style="color: #f59e0b;"></i> Anxiety Test (GAD-7)</a>
+            <a href="javascript:void(0)" onclick="openAssessmentModal('stress')" class="nav-dropdown-item"><i class="fas fa-fire-alt" style="color: #ef4444;"></i> Stress & Burnout Index</a>
+            <a href="javascript:void(0)" onclick="openAssessmentModal('relationship')" class="nav-dropdown-item"><i class="fas fa-comments" style="color: #10b981;"></i> Relationship Health Quiz</a>
+          </div>
+        </div>
+
+        <a href="#corporate" class="nav-link">Corporate Wellness</a>
+        <a href="#pricing" class="nav-link">Care Plans</a>
+        <a href="#faq" class="nav-link">FAQs</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Theme Switcher -->
+        <div class="theme-switcher-wrapper">
+          <button class="theme-switcher-btn" id="themeSwitchBtn" aria-label="Switch Design Theme">
+            <span class="theme-btn-icon"><i class="fas fa-palette"></i></span>
+            <span class="theme-btn-label">Theme</span>
+            <i class="fas fa-chevron-down" style="font-size: 0.65rem; opacity: 0.7;"></i>
+          </button>
+          <div class="theme-dropdown" id="themeDropdown">
+            <div class="theme-option active" data-theme="emerald">
+              <span class="theme-dot" style="background: linear-gradient(135deg, #0a7062, #14b8a6);"></span>
+              <div class="theme-meta">
+                <strong>Emerald Zen</strong>
+                <span>Healing Sage</span>
+              </div>
+              <i class="fas fa-check checkmark"></i>
+            </div>
+            <div class="theme-option" data-theme="midnight">
+              <span class="theme-dot" style="background: linear-gradient(135deg, #060c0b, #14b8a6);"></span>
+              <div class="theme-meta">
+                <strong>Midnight Calm</strong>
+                <span>Cyber-Zen Dark</span>
+              </div>
+              <i class="fas fa-check checkmark"></i>
+            </div>
+            <div class="theme-option" data-theme="blossom">
+              <span class="theme-dot" style="background: linear-gradient(135deg, #be185d, #f43f5e);"></span>
+              <div class="theme-meta">
+                <strong>Blossom Rose</strong>
+                <span>Warm Serenity</span>
+              </div>
+              <i class="fas fa-check checkmark"></i>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" onclick="openBookingWizard()">
+          <i class="fas fa-calendar-check"></i> Book a Session
+        </button>
+        <button class="mobile-menu-btn" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== 3. HERO SECTION ==================== -->
+  <section class="hero-section">
+    <!-- 3D Interactive Three.js Canvas & Ambient Glows -->
+    <canvas id="hero3dCanvas" class="hero-3d-canvas"></canvas>
+    <div class="hero-aura-1"></div>
+    <div class="hero-aura-2"></div>
+
+    <!-- Glowing Hero Brand Watermark Emblem -->
+    <div class="hero-watermark-emblem" style="position: absolute; pointer-events: none; z-index: 1;" aria-hidden="true">
+      <img src="assets/images/logo_watermark.png" alt="" class="hero-watermark-img" loading="lazy">
+      <div class="hero-watermark-pulse-glow"></div>
+    </div>
+
+    <div class="container hero-grid">
+      <!-- Left Content -->
+      <div class="hero-content">
+        <div class="hero-pill">
+          <i class="fas fa-shield-alt"></i> 100% Confidential & Secure Teletherapy
+        </div>
+        
+        <h1 class="hero-title">
+          Talk to <span class="highlight">Expert Therapists</span> Online for Stress, Anxiety & Depression
+        </h1>
+        
+        <p class="hero-subtitle">
+          Empathetic, non-judgmental, and certified online counseling via <strong>Video, Call, and Chat</strong>. Connect with experienced RCI psychologists from the comfort and privacy of your home.
+        </p>
+
+        <!-- Quick Session Matcher Widget -->
+        <div class="hero-widget">
+          <div class="widget-title">
+            <i class="fas fa-sliders-h" style="color: var(--primary-color);"></i> Quick Session Matcher
+          </div>
+          <div class="widget-grid">
+            <div class="widget-field">
+              <label for="heroConcern">What brings you here?</label>
+              <select id="heroConcern" class="widget-select">
+                <option value="Stress & Anxiety">Stress & Anxiety</option>
+                <option value="Relationship & Marriage">Relationship Issues</option>
+                <option value="Depression & Low Mood">Depression & Low Mood</option>
+                <option value="Work Stress & Career">Work Burnout & Career</option>
+                <option value="Self-Esteem & Confidence">Self-Esteem & Loneliness</option>
+                <option value="Grief & Loss">Grief & Heartbreak</option>
+              </select>
+            </div>
+
+            <div class="widget-field">
+              <label for="heroMode">Session Mode</label>
+              <select id="heroMode" class="widget-select">
+                <option value="video">Video Call (Recommended)</option>
+                <option value="audio">Audio / Voice Call</option>
+                <option value="chat">Confidential Private Chat</option>
+              </select>
+            </div>
+
+            <div class="widget-field">
+              <label for="heroLanguage">Preferred Language</label>
+              <select id="heroLanguage" class="widget-select">
+                <option value="Tamil" selected>Tamil</option>
+                <option value="English">English</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="widget-actions">
+            <button id="heroMatcherBtn" class="btn btn-primary widget-btn">
+              Find Your Psychologist <i class="fas fa-arrow-right"></i>
+            </button>
+            <button class="btn btn-outline widget-btn" onclick="openAssessmentModal('phq9')">
+              <i class="fas fa-clipboard-check"></i> Take Free Assessment
+            </button>
+          </div>
+        </div>
+
+        <!-- Trust Badges Bar -->
+        <div class="trust-metrics">
+          <div class="metric-item">
+            <div class="metric-icon"><i class="fas fa-star" style="color: #f59e0b;"></i></div>
+            <div class="metric-data">
+              <h4>4.9 / 5</h4>
+              <p>Over 45,000+ Reviews</p>
+            </div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon"><i class="fas fa-user-friends"></i></div>
+            <div class="metric-data">
+              <h4>500,000+</h4>
+              <p>Sessions Conducted</p>
+            </div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon"><i class="fas fa-user-md"></i></div>
+            <div class="metric-data">
+              <h4>100+ Verified</h4>
+              <p>RCI Psychologists</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right 3D Zen Meditation Visual Showcase -->
+      <div class="hero-visual hero-zen-visual" id="heroZenVisual">
+        <div class="zen-3d-wrapper">
+          <!-- 3D Interactive Canvas for Zen Orbital Rings & Mindfulness Spheres -->
+          <canvas id="zen3dCanvas" class="zen-3d-canvas"></canvas>
+
+          <!-- Centered Serene Meditating Woman from User Design -->
+          <div class="zen-meditator-box" id="zenMeditatorBox">
+            <img src="assets/images/meditation_zen.png" alt="Blossom Psychotherapy Meditation & Mindfulness" class="zen-meditator-img">
+          </div>
+
+          <!-- Ambient Radiant Zen Energy Rings and Glow Aura -->
+          <div class="zen-aura-glow"></div>
+          <div class="zen-ripple-ring ring-1"></div>
+          <div class="zen-ripple-ring ring-2"></div>
+        </div>
+        
+        <!-- Floating Glassmorphic Badges -->
+        <div class="floating-card-1 zen-badge-top">
+          <div class="pulse-dot"></div>
+          <div>
+            <h5 style="font-size: 0.86rem; font-weight: 700; color: #192a27;">Shaanthini Jayaprakash</h5>
+            <p style="font-size: 0.74rem; color: #52796f;">Certified Psychotherapist • Online</p>
+          </div>
+        </div>
+
+        <div class="floating-card-2 zen-badge-bottom">
+          <div style="font-size: 1.4rem; color: #0a7062;"><i class="fas fa-shield-alt"></i></div>
+          <div>
+            <h5 style="font-size: 0.86rem; font-weight: 700; color: #192a27;">100% Confidential & Secure</h5>
+            <p style="font-size: 0.74rem; color: #52796f;">Empathetic healing in a safe space</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 4. HOW IT WORKS ==================== -->
+  <section class="how-it-works-section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Simple & Seamless</span>
+        <h2 class="section-title">How Blossom Works</h2>
+        <p class="section-desc">Start your emotional wellness journey in three easy, confidential steps from any device.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-number">01</span>
+          <div class="step-icon"><i class="fas fa-heartbeat"></i></div>
+          <h3 class="step-title">Share Your Concern</h3>
+          <p class="step-desc">Tell us what you're experiencing or take our free 2-minute clinical screening test to pinpoint your needs.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">02</span>
+          <div class="step-icon"><i class="fas fa-user-check"></i></div>
+          <h3 class="step-title">Select Your Expert</h3>
+          <p class="step-desc">Pick from certified clinical psychologists based on their expertise, languages spoken, and schedule availability.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-number">03</span>
+          <div class="step-icon"><i class="fas fa-video"></i></div>
+          <h3 class="step-title">Begin Your Session</h3>
+          <p class="step-desc">Connect seamlessly through high-definition Video, Audio Call, or Private Chat in a secure, non-judgmental space.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 5. WHAT WE HELP WITH ==================== -->
+  <section class="concerns-section" id="concerns">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Specialized Care</span>
+        <h2 class="section-title">What We Can Help You With</h2>
+        <p class="section-desc">Evidence-based counseling tailored to your exact emotional, personal, and relationship challenges.</p>
+      </div>
+
+      <div class="concerns-grid">
+        <!-- Card 1 -->
+        <div class="concern-card">
+          <div class="concern-icon-box"><i class="fas fa-bolt"></i></div>
+          <h3 class="concern-title">Stress & Anxiety</h3>
+          <p class="concern-desc">Overwhelmed by restlessness, racing thoughts, panic attacks, or persistent day-to-day worry.</p>
+          <div class="symptoms-tags">
+            <span class="sym-tag">Panic Attacks</span>
+            <span class="sym-tag">Overthinking</span>
+            <span class="sym-tag">Sleep Troubles</span>
+          </div>
+          <a href="javascript:void(0)" onclick="openBookingWizard({concern: 'Stress & Anxiety'})" class="concern-btn">
+            Consult Specialist <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="concern-card">
+          <div class="concern-icon-box"><i class="fas fa-heart"></i></div>
+          <h3 class="concern-title">Relationship & Marriage</h3>
+          <p class="concern-desc">Resolve communication breakdown, intimacy issues, infidelity, marital conflict, or heal from a painful breakup.</p>
+          <div class="symptoms-tags">
+            <span class="sym-tag">Couple Therapy</span>
+            <span class="sym-tag">Trust Issues</span>
+            <span class="sym-tag">Breakup Healing</span>
+          </div>
+          <a href="javascript:void(0)" onclick="openBookingWizard({concern: 'Relationship & Marriage'})" class="concern-btn">
+            Consult Specialist <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="concern-card">
+          <div class="concern-icon-box"><i class="fas fa-cloud-moon"></i></div>
+          <h3 class="concern-title">Depression & Low Mood</h3>
+          <p class="concern-desc">Feeling hopeless, emotionally exhausted, lacking motivation, or struggling to find joy in daily life.</p>
+          <div class="symptoms-tags">
+            <span class="sym-tag">Loss of Interest</span>
+            <span class="sym-tag">Chronic Fatigue</span>
+            <span class="sym-tag">Emptiness</span>
+          </div>
+          <a href="javascript:void(0)" onclick="openBookingWizard({concern: 'Depression & Low Mood'})" class="concern-btn">
+            Consult Specialist <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="concern-card">
+          <div class="concern-icon-box"><i class="fas fa-briefcase"></i></div>
+          <h3 class="concern-title">Work Stress & Burnout</h3>
+          <p class="concern-desc">Overcome career pressures, imposter syndrome, toxic workplace environments, and reclaim work-life harmony.</p>
+          <div class="symptoms-tags">
+            <span class="sym-tag">Exhaustion</span>
+            <span class="sym-tag">Career Anxiety</span>
+            <span class="sym-tag">Performance Dread</span>
+          </div>
+          <a href="javascript:void(0)" onclick="openBookingWizard({concern: 'Work Stress & Career'})" class="concern-btn">
+            Consult Specialist <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="concern-card">
+          <div class="concern-icon-box"><i class="fas fa-user-shield"></i></div>
+          <h3 class="concern-title">Self-Esteem & Confidence</h3>
+          <p class="concern-desc">Break the cycle of negative self-talk, body dissatisfaction, social anxiety, and build strong self-worth.</p>
+          <div class="symptoms-tags">
+            <span class="sym-tag">Social Anxiety</span>
+            <span class="sym-tag">Self-Doubt</span>
+            <span class="sym-tag">People Pleasing</span>
+          </div>
+          <a href="javascript:void(0)" onclick="openBookingWizard({concern: 'Self-Esteem & Confidence'})" class="concern-btn">
+            Consult Specialist <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="concern-card">
+          <div class="concern-icon-box"><i class="fas fa-dove"></i></div>
+          <h3 class="concern-title">Grief & Loss</h3>
+          <p class="concern-desc">Navigating the deep sorrow of losing a loved one, life transitions, divorce, or major personal life changes.</p>
+          <div class="symptoms-tags">
+            <span class="sym-tag">Bereavement</span>
+            <span class="sym-tag">Emotional Shock</span>
+            <span class="sym-tag">Acceptance</span>
+          </div>
+          <a href="javascript:void(0)" onclick="openBookingWizard({concern: 'Grief & Loss'})" class="concern-btn">
+            Consult Specialist <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="concern-card">
+          <div class="concern-icon-box"><i class="fas fa-child"></i></div>
+          <h3 class="concern-title">Parenting & Family</h3>
+          <p class="concern-desc">Manage adolescent conflicts, behavioral challenges in children, postpartum stress, and family communication.</p>
+          <div class="symptoms-tags">
+            <span class="sym-tag">Teen Counseling</span>
+            <span class="sym-tag">Postpartum</span>
+            <span class="sym-tag">Parental Stress</span>
+          </div>
+          <a href="javascript:void(0)" onclick="openBookingWizard({concern: 'Parenting & Family'})" class="concern-btn">
+            Consult Specialist <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="concern-card">
+          <div class="concern-icon-box" style="background: #fef2f2; color: #dc2626;"><i class="fas fa-fire"></i></div>
+          <h3 class="concern-title">Anger & Emotional Balance</h3>
+          <p class="concern-desc">Learn effective strategies to manage emotional outbursts, irritability, frustration, and impulsive reactions constructively.</p>
+          <div class="symptoms-tags">
+            <span class="sym-tag">Irritability</span>
+            <span class="sym-tag">Emotional Outbursts</span>
+            <span class="sym-tag">Impulse Control</span>
+          </div>
+          <a href="javascript:void(0)" onclick="openBookingWizard({concern: 'Anger Management'})" class="concern-btn">
+            Consult Specialist <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 6. VERIFIED PSYCHOLOGISTS ==================== -->
+  <section class="therapists-section" id="therapists">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Clinical Expert</span>
+        <h2 class="section-title">Meet Your Psychotherapist</h2>
+        <p class="section-desc">Empathetic, confidential, and evidence-based psychotherapy by Certified Psychotherapist Shaanthini Jayaprakash.</p>
+      </div>
+
+      <!-- Spotlight Card Wrapper -->
+      <div id="therapistsGrid">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 7. FREE CLINICAL SELF-ASSESSMENTS ==================== -->
+  <section class="assessments-section" id="assessments">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Clinically Validated</span>
+        <h2 class="section-title">Free Self-Assessments</h2>
+        <p class="section-desc">Take confidential, 2-minute clinical screening quizzes with instant scoring and recommendations.</p>
+      </div>
+
+      <div class="assessments-grid">
+        <div class="quiz-card">
+          <span class="quiz-badge">Standard PHQ-9</span>
+          <h3 class="quiz-title">Depression Test</h3>
+          <p class="quiz-desc">Screen for feelings of hopelessness, sleep changes, loss of appetite, and persistent emotional fatigue.</p>
+          <div class="quiz-meta">
+            <span><i class="far fa-clock"></i> 2 Mins</span>
+            <span><i class="far fa-question-circle"></i> 8 Questions</span>
+          </div>
+          <button class="btn btn-teal" onclick="openAssessmentModal('phq9')">
+            Take Test Now <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <div class="quiz-card">
+          <span class="quiz-badge">Standard GAD-7</span>
+          <h3 class="quiz-title">Anxiety Test</h3>
+          <p class="quiz-desc">Evaluate restlessness, uncontrollable worry, sudden nervousness, and somatic panic symptoms.</p>
+          <div class="quiz-meta">
+            <span><i class="far fa-clock"></i> 2 Mins</span>
+            <span><i class="far fa-question-circle"></i> 7 Questions</span>
+          </div>
+          <button class="btn btn-teal" onclick="openAssessmentModal('gad7')">
+            Take Test Now <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <div class="quiz-card">
+          <span class="quiz-badge">Clinical PSS</span>
+          <h3 class="quiz-title">Stress & Burnout</h3>
+          <p class="quiz-desc">Check your current workplace exhaustion levels, mental bandwidth overload, and coping resilience.</p>
+          <div class="quiz-meta">
+            <span><i class="far fa-clock"></i> 1 Min</span>
+            <span><i class="far fa-question-circle"></i> 4 Questions</span>
+          </div>
+          <button class="btn btn-teal" onclick="openAssessmentModal('stress')">
+            Take Test Now <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+
+        <div class="quiz-card">
+          <span class="quiz-badge">Relationship Index</span>
+          <h3 class="quiz-title">Relationship Quiz</h3>
+          <p class="quiz-desc">Assess emotional intimacy, communication dynamics, trust friction, and conflict recovery in your partnership.</p>
+          <div class="quiz-meta">
+            <span><i class="far fa-clock"></i> 1 Min</span>
+            <span><i class="far fa-question-circle"></i> 4 Questions</span>
+          </div>
+          <button class="btn btn-teal" onclick="openAssessmentModal('relationship')">
+            Take Test Now <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 8. WHY CHOOSE BLOSSOM ==================== -->
+  <section class="why-us-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Blossom Advantage</span>
+        <h2 class="section-title">Why 500,000+ People Trust Us</h2>
+        <p class="section-desc">We prioritize your privacy, comfort, and clinical recovery every step of the way.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon-circle"><i class="fas fa-user-secret"></i></div>
+          <h3 class="feature-title">100% Confidential & Secure</h3>
+          <p class="feature-desc">Your identity, chats, and calls remain strictly confidential with end-to-end encryption. No audio or video is ever recorded.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-circle"><i class="fas fa-certificate"></i></div>
+          <h3 class="feature-title">RCI Certified Psychologists</h3>
+          <p class="feature-desc">All counselors possess Master's degrees in Clinical Psychology, follow rigorous ethical codes, and undergo continuous peer supervision.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-circle"><i class="fas fa-clock"></i></div>
+          <h3 class="feature-title">Flexible Schedule (7 AM - 11 PM)</h3>
+          <p class="feature-desc">Early morning before work or late night after family duties — schedule therapy at your utmost convenience, 7 days a week.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-circle"><i class="fas fa-exchange-alt"></i></div>
+          <h3 class="feature-title">Free Therapist Switching</h3>
+          <p class="feature-desc">Therapeutic rapport is essential. If you don't feel a strong bond with your therapist, switch to another at zero extra cost.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-circle"><i class="fas fa-comments"></i></div>
+          <h3 class="feature-title">Multi-Mode Flexibility</h3>
+          <p class="feature-desc">Choose between Video, Audio Call, or text-based Chat sessions depending on your personal comfort level.</p>
+        </div>
+
+        <div class="feature-box">
+          <div class="feature-icon-circle"><i class="fas fa-brain"></i></div>
+          <h3 class="feature-title">Evidence-Based Approaches</h3>
+          <p class="feature-desc">Our psychologists utilize CBT, Rational Emotive Behavior Therapy (REBT), and Mindfulness frameworks proven by clinical science.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 9. PERSONALIZED CARE PLANS ==================== -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tailored Healing Journeys</span>
+        <h2 class="section-title">Personalized Care & Therapy Roadmaps</h2>
+        <p class="section-desc">Evidence-based psychotherapy structured around your emotional wellbeing and healing pace. Choose the care plan that fits your personal journey.</p>
+      </div>
+
+      <!-- Animated Care Journey Toggle (Individual vs Couple) -->
+      <div class="pricing-toggle-wrapper">
+        <div class="pricing-toggle" id="pricingToggleContainer">
+          <button type="button" class="toggle-tab-btn active" id="labelIndividual">
+            <i class="fas fa-user"></i>
+            <span>Individual Therapy</span>
+          </button>
+
+          <div class="switch-pill" id="pricingToggleSwitch" role="switch" aria-checked="false" tabindex="0" title="Click to toggle Individual / Couple plans">
+            <div class="switch-handle">
+              <i class="fas fa-user" id="switchKnobIcon"></i>
+            </div>
+          </div>
+
+          <button type="button" class="toggle-tab-btn" id="labelCouple">
+            <i class="fas fa-user-friends"></i>
+            <span>Couple Counselling</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Individual Plans Grid -->
+      <div class="pricing-grid" id="individualPricingGrid">
+        <!-- Single Session: Foundation Consultation -->
+        <div class="pricing-card">
+          <div class="plan-stage-tag"><i class="fas fa-compass"></i> Foundation Level</div>
+          <h3 class="plan-name">Initial Consultation</h3>
+          <p class="plan-desc">Ideal for addressing an immediate emotional dilemma or taking the first step in your healing journey.</p>
+          <div class="plan-price care-plan-focus">
+            <span class="price-amount care-title">Assessment & Roadmap</span>
+            <span class="price-per-session"><i class="fas fa-clock"></i> 45-Minute In-Depth Diagnostic Session</span>
+          </div>
+          <div class="plan-features">
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> 45-Minute 1-on-1 Clinical Assessment</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Video Call, Audio Call, or Private Chat</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Identification of Core Triggers & Anxiety Roots</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Immediate Grounding & Coping Action Plan</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Choice of Language (Tamil / English)</div>
+          </div>
+          <button class="btn btn-outline" onclick="openBookingWizard()">Book Initial Session</button>
+        </div>
+
+        <!-- 3 Sessions Pack: Guided Healing (Featured) -->
+        <div class="pricing-card featured">
+          <span class="popular-ribbon">Most Recommended</span>
+          <div class="plan-stage-tag featured-tag"><i class="fas fa-seedling"></i> Healing Growth</div>
+          <h3 class="plan-name">Guided Healing Journey</h3>
+          <p class="plan-desc">Structured coping tools, weekly emotional progress tracking, and cognitive realignment.</p>
+          <div class="plan-price care-plan-focus">
+            <span class="price-amount care-title">Coping & Resilience Pack</span>
+            <span class="price-per-session"><i class="fas fa-calendar-alt"></i> 3 x 45-Minute Multi-Session Program</span>
+          </div>
+          <div class="plan-features">
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> 3 x 45-Minute Structured Therapy Sessions</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Dedicated Continuity with Shaanthini</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Personalized CBT Worksheets & Exercises</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Emotional Trigger Mastery & Habit Reset</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Flexible Scheduling (Valid for 60 Days)</div>
+          </div>
+          <button class="btn btn-primary" onclick="openBookingWizard()">Begin Healing Journey</button>
+        </div>
+
+        <!-- 6 Sessions Pack: Deep Transformation -->
+        <div class="pricing-card">
+          <div class="plan-stage-tag"><i class="fas fa-award"></i> Deep Healing</div>
+          <h3 class="plan-name">Transformative Mastery</h3>
+          <p class="plan-desc">Deep transformative healing for chronic anxiety, depression, trauma, and long-term self-growth.</p>
+          <div class="plan-price care-plan-focus">
+            <span class="price-amount care-title">Complete Recovery Program</span>
+            <span class="price-per-session"><i class="fas fa-shield-alt"></i> 6 x 45-Minute Comprehensive Care</span>
+          </div>
+          <div class="plan-features">
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> 6 x 45-Minute In-Depth Transformative Sessions</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Priority Booking Slots (Evening & Weekends)</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Complimentary Digital Self-Care Guidebook</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Between-Session Guidance & Follow-ups</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Full Longitudinal Support (Valid for 90 Days)</div>
+          </div>
+          <button class="btn btn-outline" onclick="openBookingWizard()">Transform Your Life</button>
+        </div>
+      </div>
+
+      <!-- Couple Plans Grid (Hidden by default, shown on toggle) -->
+      <div class="pricing-grid" id="couplePricingGrid" style="display: none; max-width: 850px; margin: 0 auto; grid-template-columns: 1fr 1fr;">
+        <div class="pricing-card">
+          <div class="plan-stage-tag"><i class="fas fa-heart"></i> Relationship Discovery</div>
+          <h3 class="plan-name">Joint Couple Consultation</h3>
+          <p class="plan-desc">Joint mediation with an Emotionally Focused Couple Therapist (EFT) to de-escalate conflicts.</p>
+          <div class="plan-price care-plan-focus">
+            <span class="price-amount care-title">Joint Evaluation</span>
+            <span class="price-per-session"><i class="fas fa-clock"></i> 60-Minute Extended Video Session</span>
+          </div>
+          <div class="plan-features">
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> 60-Minute Extended Video Consultation</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Both Partners Join from Same or Separate Links</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Safe Mediation & Conflict De-escalation</div>
+          </div>
+          <button class="btn btn-outline" onclick="openBookingWizard({concern: 'Relationship & Marriage'})">Book Couple Slot</button>
+        </div>
+
+        <div class="pricing-card featured">
+          <span class="popular-ribbon">Recommended</span>
+          <div class="plan-stage-tag featured-tag"><i class="fas fa-comments"></i> Intimacy Rebuilding</div>
+          <h3 class="plan-name">Marital Reconnection Bundle</h3>
+          <p class="plan-desc">Comprehensive marital reconciliation, trust rebuilding, and mutual emotional alignment.</p>
+          <div class="plan-price care-plan-focus">
+            <span class="price-amount care-title">Reconnection Journey</span>
+            <span class="price-per-session"><i class="fas fa-calendar-alt"></i> 3 x 60-Minute Guided Sessions</span>
+          </div>
+          <div class="plan-features">
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> 3 x 60-Minute In-Depth Couple Sessions</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Communication Frameworks & At-Home Exercises</div>
+            <div class="plan-feature-item"><i class="fas fa-check-circle"></i> Valid for 75 Days with Dedicated Follow-up</div>
+          </div>
+          <button class="btn btn-primary" onclick="openBookingWizard({concern: 'Relationship & Marriage'})">Select Couple Journey</button>
+        </div>
+      </div>
+
+      <!-- Trust Fee Inquiry Banner -->
+      <div class="care-fee-banner">
+        <div class="fee-banner-icon"><i class="fas fa-hand-holding-heart"></i></div>
+        <div class="fee-banner-content">
+          <h4>Accessible & Confidential Healthcare</h4>
+          <p>Fee structures and flexible sliding-scale options are shared transparently during your initial consultation or via direct inquiry, customized to your treatment plan.</p>
+        </div>
+        <a href="https://wa.me/919789680259?text=Hi%20Shaanthini,%20I%20would%20like%20to%20know%20more%20about%20the%20therapy%20session%20plans" target="_blank" class="btn btn-primary fee-banner-btn">
+          <i class="fab fa-whatsapp"></i> Inquire Session Details
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 10. CORPORATE WELLNESS BANNER ==================== -->
+  <section class="corporate-section" id="corporate">
+    <div class="corporate-inner">
+      <div>
+        <h2 class="corporate-title">Empower Your Workforce with Blossom EAP</h2>
+        <p class="corporate-desc">
+          Boost employee resilience, reduce burnout, and increase productivity. We provide 100% confidential 1-on-1 counseling, manager mental health workshops, and aggregate wellness analytics for progressive companies.
+        </p>
+        <div class="corporate-bullets">
+          <div class="corp-bullet"><i class="fas fa-check-circle" style="color: #14b8a6;"></i> 24/7 Dedicated Employee Hotline</div>
+          <div class="corp-bullet"><i class="fas fa-check-circle" style="color: #14b8a6;"></i> Monthly Interactive Webinars</div>
+          <div class="corp-bullet"><i class="fas fa-check-circle" style="color: #14b8a6;"></i> Zero Admin Burden for HR</div>
+          <div class="corp-bullet"><i class="fas fa-check-circle" style="color: #14b8a6;"></i> Anonymous Usage Reports</div>
+        </div>
+        <button class="btn btn-primary btn-lg" onclick="openCorporateModal()">
+          <i class="fas fa-building"></i> Request Corporate Demo
+        </button>
+      </div>
+      <div style="text-align: center;">
+        <i class="fas fa-users-cog" style="font-size: 7rem; opacity: 0.85; color: #14b8a6;"></i>
+        <h4 style="margin-top: 18px; font-size: 1.25rem;">Trusted by 80+ Corporate Partners</h4>
+        <p style="font-size: 0.9rem; color: #a3e3d6;">IT, Healthcare, BFSI & Unicorn Startups</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 11. CLIENT TESTIMONIALS ==================== -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Real Transformations</span>
+        <h2 class="section-title">Stories from Our Clients</h2>
+        <p class="section-desc">Over 500,000 individuals have found clarity, hope, and peace through Blossom.</p>
+      </div>
+
+      <div class="testimonials-grid" id="publicTestimonialsGrid">
+        <div class="testimonial-card">
+          <div class="rating-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "I had been suffering from crippling panic attacks and work anxiety for 8 months. Dr. Ananya helped me understand the cognitive distortions driving my fear. In just 4 sessions, I felt in control of my mind again."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar-initial">S</div>
+            <div class="author-details">
+              <h5>Siddharth K.</h5>
+              <p>Software Architect, Bengaluru • Anxiety Therapy</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="rating-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "My husband and I were on the verge of separation due to relentless arguments and miscommunication. Couple counseling with Arjun gave us safe ground to express our hurt without anger. It saved our 7-year marriage."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar-initial">R</div>
+            <div class="author-details">
+              <h5>Radhika & Vivek</h5>
+              <p>Chennai • Marriage & Couple Therapy</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="rating-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "The anonymity and chat option was a lifesaver for me. I felt too vulnerable to talk out loud at first. Rahul was so patient and non-judgmental. Blossom made mental health support truly accessible."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar-initial">M</div>
+            <div class="author-details">
+              <h5>Meera N.</h5>
+              <p>Mumbai • Self-Esteem & Career Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 12. FREQUENTLY ASKED QUESTIONS ==================== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">Everything you need to know about starting online therapy with Blossom.</p>
+      </div>
+
+      <div class="faq-list" id="publicFaqList">
+        <!-- Item 1 -->
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>Is online counselling as effective as in-person therapy?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Yes! Numerous clinical research studies show that online tele-counselling via video or audio is just as effective as traditional face-to-face therapy for anxiety, stress, relationship challenges, and depression. It also offers greater convenience, zero commute time, and maximum privacy.
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How is my confidentiality and privacy maintained?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Blossom adheres to strict clinical confidentiality guidelines and HIPAA data standards. All chat messages and video connections are 256-bit encrypted. We do not record video or audio calls, and your personal identifying details are never shared with third parties.
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I switch therapists if I do not feel a connection?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Absolutely. Finding the right psychologist is crucial for your healing. If at any point you feel your current counselor is not the best match for your needs, you can switch to any other psychologist on our platform at zero additional fee.
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What happens during my first therapy session?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Your first session is an introductory, safe exploration. Your psychologist will listen without judgment to understand what you are going through, your primary triggers, history, and therapy goals. Together, you will establish a collaborative plan for healing.
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I reschedule my appointment if something urgent comes up?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Yes, you can easily reschedule your session up to 4 hours prior to the scheduled start time directly from your dashboard or by pinging our WhatsApp care desk.
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What is the difference between a Psychologist and a Psychiatrist?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Psychologists provide psychotherapy, behavioral therapy (CBT), and talk counseling to address psychological patterns and emotional distress. Psychiatrists are medical doctors who can prescribe psychiatric medications. Blossom provides counseling psychology; if clinical psychiatric intervention is required, we can coordinate medical referrals.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 13. FINAL CALL TO ACTION ==================== -->
+  <section class="final-cta-section">
+    <div class="container cta-box">
+      <h2>Ready to Prioritize Your Mental Well-being?</h2>
+      <p>Taking the first step is often the hardest. Our compassionate psychologists are here to support you without judgment.</p>
+      <div class="cta-btns">
+        <button class="btn btn-primary btn-lg" onclick="openBookingWizard()">
+          <i class="fas fa-calendar-check"></i> Book Your Session Now
+        </button>
+        <button class="btn btn-outline-white btn-lg" onclick="openAssessmentModal('phq9')">
+          <i class="fas fa-stethoscope"></i> Free 2-Min Self-Test
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 14. FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Col 1: About -->
+        <div class="footer-col footer-about">
+          <a href="#" class="brand-logo" style="color: white;">
+            <img src="assets/images/logo.png" alt="Blossom Psychotherapy" class="brand-logo-img">
+            <div>
+              Blossom<span class="dot">.</span>
+              <span class="brand-logo-sub" style="color: #a3e3d6;">Psychotherapy & Wellness</span>
+            </div>
+          </a>
+          <p>
+            Blossom Psychotherapy is a dedicated online mental wellness practice led by Certified Psychotherapist Shaanthini Jayaprakash, providing confidential, evidence-based psychological counseling for individuals and couples.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com/blossom._.psychotherapy" target="_blank" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/919789680259" target="_blank" class="social-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:blossomtherapy06@gmail.com" class="social-btn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Services -->
+        <div class="footer-col footer-links">
+          <h4>Therapy & Care</h4>
+          <ul>
+            <li><a href="#concerns">Stress & Anxiety</a></li>
+            <li><a href="#concerns">Relationship & Marriage</a></li>
+            <li><a href="#concerns">Depression Counselling</a></li>
+            <li><a href="#concerns">Workplace Burnout</a></li>
+            <li><a href="#concerns">Self-Esteem & Confidence</a></li>
+            <li><a href="#concerns">Anger Management</a></li>
+            <li><a href="#therapists">Meet Psychotherapist</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Links -->
+        <div class="footer-col footer-links">
+          <h4>Assessments & Info</h4>
+          <ul>
+            <li><a href="javascript:void(0)" onclick="openAssessmentModal('phq9')">Depression Test (PHQ-9)</a></li>
+            <li><a href="javascript:void(0)" onclick="openAssessmentModal('gad7')">Anxiety Screener (GAD-7)</a></li>
+            <li><a href="javascript:void(0)" onclick="openAssessmentModal('stress')">Stress & Burnout Scale</a></li>
+            <li><a href="#corporate">Corporate Wellness</a></li>
+            <li><a href="#pricing">Transparent Pricing</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+            <li><a href="#">Privacy & Confidentiality</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact -->
+        <div class="footer-col footer-contact">
+          <h4>Contact & Connect</h4>
+          <ul>
+            <li>
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <strong>Phone Support:</strong><br>
+                <span id="footerPhone">+91 97896 80259</span>
+              </div>
+            </li>
+            <li>
+              <i class="fab fa-whatsapp"></i>
+              <div>
+                <strong>WhatsApp:</strong><br>
+                <span id="footerWhatsapp">+91 97896 80259</span>
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Email Address:</strong><br>
+                <span id="footerEmail">blossomtherapy06@gmail.com</span>
+              </div>
+            </li>
+            <li>
+              <i class="fab fa-instagram"></i>
+              <div>
+                <strong>Instagram:</strong><br>
+                <a href="https://instagram.com/blossom._.psychotherapy" target="_blank" id="footerInstagram" style="color: #2dd4bf; text-decoration: underline;">@blossom._.psychotherapy</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Crisis Disclaimer -->
+    <div class="footer-disclaimer">
+      <div class="container">
+        <p class="disclaimer-text">
+          <strong>EMERGENCY CRISIS NOTICE:</strong> This is a mental wellness and counseling platform and is <strong>NOT</strong> an emergency crisis or suicide intervention service. If you are experiencing severe psychological distress or emergency, please immediately contact the National 24/7 Tele-MANAS Helpline at <strong>14416</strong>, call <strong>112</strong>, or proceed to the nearest hospital emergency department.
+        </p>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <p>&copy; 2026 Shaanthini Jayaprakash • Blossom Psychotherapy. All Rights Reserved.</p>
+        <p style="margin: 0;">Built with ❤️ for compassionate emotional healing</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== 15. FLOATING WHATSAPP WIDGET ==================== -->
+  <div class="whatsapp-floating">
+    <!-- Popover Card -->
+    <div class="whatsapp-popover" id="whatsappPopover">
+      <div class="popover-header">
+        <div class="popover-title">
+          <img src="assets/images/logo.png" alt="Blossom Logo" style="width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid white; object-fit: cover; flex-shrink: 0;">
+          <div>
+            <h6>Blossom Care Desk</h6>
+            <span>Typically replies in 2 mins</span>
+          </div>
+        </div>
+        <button id="whatsappCloseBtn" style="color: white; font-size: 1.1rem;"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="popover-body">
+        <div class="chat-bubble">
+          👋 Hello! Connect directly with <strong>Shaanthini Jayaprakash</strong> (Certified Psychotherapist) for confidential sessions.
+        </div>
+        <button class="btn btn-primary" id="startWhatsappChatBtn" style="width: 100%;">
+          <i class="fab fa-whatsapp"></i> Start WhatsApp Chat
+        </button>
+      </div>
+    </div>
+
+    <!-- Floating Trigger Button -->
+    <div class="whatsapp-btn" id="whatsappFloatingBtn" title="Chat with Blossom on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+      <div class="whatsapp-badge"></div>
+    </div>
+  </div>
+
+  <!-- ==================== 16. MODAL: BOOKING WIZARD ==================== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Book a Confidential Session</h3>
+        <button class="modal-close" onclick="closeAllModals()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="bookingForm">
+          <!-- Step 1: Concern -->
+          <div class="form-group">
+            <label class="form-label" for="bookConcern">1. What would you like help with?</label>
+            <select id="bookConcern" class="form-control">
+              <option value="Stress & Anxiety">Stress & Anxiety</option>
+              <option value="Relationship & Marriage">Relationship & Marriage</option>
+              <option value="Depression & Low Mood">Depression & Low Mood</option>
+              <option value="Work Stress & Career">Work Stress & Career Burnout</option>
+              <option value="Self-Esteem & Confidence">Self-Esteem & Confidence</option>
+              <option value="Grief & Loss">Grief & Loss</option>
+              <option value="Parenting & Family">Parenting & Family</option>
+              <option value="Anger Management">Anger Management</option>
+            </select>
+          </div>
+
+          <!-- Step 2: Mode -->
+          <div class="form-group">
+            <label class="form-label">2. Select Session Mode</label>
+            <div class="mode-chips-grid">
+              <div class="mode-card selected" data-mode="video">
+                <i class="fas fa-video"></i>
+                <h6>Video Call</h6>
+              </div>
+              <div class="mode-card" data-mode="audio">
+                <i class="fas fa-phone-alt"></i>
+                <h6>Audio Call</h6>
+              </div>
+              <div class="mode-card" data-mode="chat">
+                <i class="fas fa-comment-dots"></i>
+                <h6>Private Chat</h6>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Therapist & Preferred Language -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="bookTherapist">3. Select Your Psychologist</label>
+              <select id="bookTherapist" class="form-control">
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="bookLanguage">Preferred Language</label>
+              <select id="bookLanguage" class="form-control">
+                <option value="Tamil" selected>🗣️ Tamil</option>
+                <option value="English">🗣️ English</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="bookDate">Select Date</label>
+              <input type="date" id="bookDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Available Slots</label>
+              <div class="slots-grid" id="modalSlotsGrid">
+                <div class="slot-chip" data-slot="10:00 AM">10:00 AM</div>
+                <div class="slot-chip" data-slot="11:30 AM">11:30 AM</div>
+                <div class="slot-chip" data-slot="02:00 PM">02:00 PM</div>
+                <div class="slot-chip selected" data-slot="04:30 PM">04:30 PM</div>
+                <div class="slot-chip" data-slot="06:30 PM">06:30 PM</div>
+                <div class="slot-chip" data-slot="08:00 PM">08:00 PM</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: Contact Details -->
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="bookName">
+                <span>Your Name / Alias <span style="color: #ef4444;">*</span></span>
+                <span class="char-counter" id="nameCounter">0/30</span>
+              </label>
+              <input type="text" id="bookName" class="form-control" placeholder="e.g. John Doe" maxlength="30" autocomplete="name" required>
+              <small id="nameValidationMsg" class="validation-hint">
+                <i class="fas fa-info-circle"></i> Only alphabets allowed (max 30 letters)
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="bookPhone">
+                <span>WhatsApp / Mobile Number <span style="color: #ef4444;">*</span></span>
+                <span class="char-counter" id="phoneCounter">0/10</span>
+              </label>
+              <div class="phone-input-group" id="phoneInputGroup">
+                <select id="bookCountryCode" class="country-code-select" aria-label="Select Country Code">
+                  <option value="+91" data-digits="10" selected>🇮🇳 +91 (India)</option>
+                  <option value="+1" data-digits="10">🇺🇸 +1 (USA)</option>
+                  <option value="+44" data-digits="10">🇬🇧 +44 (UK)</option>
+                  <option value="+971" data-digits="9">🇦🇪 +971 (UAE)</option>
+                  <option value="+65" data-digits="8">🇸🇬 +65 (Singapore)</option>
+                  <option value="+60" data-digits="9">🇲🇾 +60 (Malaysia)</option>
+                  <option value="+61" data-digits="9">🇦🇺 +61 (Australia)</option>
+                  <option value="+1" data-digits="10">🇨🇦 +1 (Canada)</option>
+                  <option value="+966" data-digits="9">🇸🇦 +966 (Saudi)</option>
+                  <option value="+974" data-digits="8">🇶🇦 +974 (Qatar)</option>
+                  <option value="+965" data-digits="8">🇰🇼 +965 (Kuwait)</option>
+                  <option value="+968" data-digits="8">🇴🇲 +968 (Oman)</option>
+                  <option value="+973" data-digits="8">🇧🇭 +973 (Bahrain)</option>
+                  <option value="+94" data-digits="9">🇱🇰 +94 (Sri Lanka)</option>
+                  <option value="+49" data-digits="10">🇩🇪 +49 (Germany)</option>
+                  <option value="+33" data-digits="9">🇫🇷 +33 (France)</option>
+                  <option value="+64" data-digits="9">🇳🇿 +64 (New Zealand)</option>
+                  <option value="+353" data-digits="9">🇮🇪 +353 (Ireland)</option>
+                  <option value="other" data-digits="15">🌍 Other Country</option>
+                </select>
+                <input type="text" id="customCountryCode" class="custom-country-input" placeholder="+Code" maxlength="5" style="display: none;" title="Enter custom country code e.g. +81">
+                <input type="tel" id="bookPhone" class="phone-number-input" placeholder="10-digit number" maxlength="10" inputmode="numeric" autocomplete="tel" required>
+              </div>
+              <small id="phoneValidationMsg" class="validation-hint">
+                <i class="fas fa-info-circle"></i> India (+91) requires exactly 10 digits
+              </small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="bookEmail">Email Address (Optional for link & invoice)</label>
+            <input type="email" id="bookEmail" class="form-control" placeholder="name@example.com">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 10px; background: #25d366; box-shadow: 0 4px 14px rgba(37,211,102,0.35);">
+            <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Confirm & Book on WhatsApp
+          </button>
+          
+          <p style="text-align: center; font-size: 0.76rem; color: #788a85; margin-top: 10px;">
+            <i class="fas fa-shield-alt"></i> 100% Confidential. Free cancellation up to 4 hours before session.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 17. MODAL: CLINICAL SELF-ASSESSMENT ==================== -->
+  <div class="modal-overlay" id="assessmentModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="assessmentModalTitle">Clinical Self-Assessment</h3>
+        <button class="modal-close" onclick="closeAllModals()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <!-- In-progress Questionnaire Area -->
+        <div id="quizQuestionArea">
+          <p id="quizIntroDesc" style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 18px;"></p>
+          
+          <div class="assessment-stepper">
+            <div class="progress-track">
+              <div class="progress-fill" id="quizProgressFill"></div>
+            </div>
+            <div class="progress-label">
+              <span id="quizProgressLabel">Question 1 of 8</span>
+              <span>100% Anonymous</span>
+            </div>
+          </div>
+
+          <h4 class="quiz-question-title" id="quizQuestionText">Loading question...</h4>
+
+          <div class="quiz-options-list">
+            <button class="quiz-option-btn" data-score="0">
+              <span>Not at all</span>
+              <i class="fas fa-circle" style="font-size: 0.75rem; color: #cbd5e1;"></i>
+            </button>
+            <button class="quiz-option-btn" data-score="1">
+              <span>Several days</span>
+              <i class="fas fa-circle" style="font-size: 0.75rem; color: #cbd5e1;"></i>
+            </button>
+            <button class="quiz-option-btn" data-score="2">
+              <span>More than half the days</span>
+              <i class="fas fa-circle" style="font-size: 0.75rem; color: #cbd5e1;"></i>
+            </button>
+            <button class="quiz-option-btn" data-score="3">
+              <span>Nearly every day</span>
+              <i class="fas fa-circle" style="font-size: 0.75rem; color: #cbd5e1;"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Result Card Area (Hidden until finished) -->
+        <div id="quizResultArea" style="display: none;">
+          <div class="quiz-result-box">
+            <div class="score-circle" id="quizScoreDisplay">14</div>
+            <div class="result-badge severity-moderate" id="quizSeverityBadge">Moderate Symptoms</div>
+            <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: var(--text-primary);">
+              Your Clinical Screening Summary
+            </h4>
+            <p id="quizFeedbackText" style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;">
+              Your score reflects moderate emotional distress. You don't have to carry this alone. Talking to an empathetic psychologist can give you coping tools to regain your peace.
+            </p>
+
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+              <button class="btn btn-primary" onclick="openBookingWizard()">
+                <i class="fas fa-calendar-check"></i> Consult a Psychologist
+              </button>
+              <button class="btn btn-outline" onclick="closeAllModals()">
+                Save & Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 18. MODAL: CORPORATE WELLNESS ==================== -->
+  <div class="modal-overlay" id="corporateModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Partner with Blossom for Your Team</h3>
+        <button class="modal-close" onclick="closeAllModals()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="corporateForm">
+          <div class="form-group">
+            <label class="form-label" for="corpCompanyName">Company / Organization Name</label>
+            <input type="text" id="corpCompanyName" class="form-control" placeholder="e.g. Acme Tech Solutions" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="corpName">HR / Leader Name</label>
+              <input type="text" id="corpName" class="form-control" placeholder="e.g. Priya Sundaram" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="corpWorkEmail">Work Email</label>
+              <input type="email" id="corpWorkEmail" class="form-control" placeholder="hr@acme.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="corpTeamSize">Team Size</label>
+              <select id="corpTeamSize" class="form-control">
+                <option value="10-50">10 - 50 Employees</option>
+                <option value="50-250">50 - 250 Employees</option>
+                <option value="250-1000">250 - 1,000 Employees</option>
+                <option value="1000+">1,000+ Employees</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="corpPhone">Phone Number</label>
+              <input type="tel" id="corpPhone" class="form-control" placeholder="+91 98765 43210" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="corpNeeds">Specific Wellness Needs (Optional)</label>
+            <textarea id="corpNeeds" class="form-control" rows="3" placeholder="Tell us if you need EAP counseling, stress workshops, leadership training, etc."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+            <i class="fas fa-paper-plane"></i> Request Custom Corporate Proposal
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 19. MODAL: BOOKING CONFIRMATION & DIRECT DISPATCH ==================== -->
+  <div class="modal-overlay" id="bookingSuccessModal">
+    <div class="modal-dialog" style="max-width: 520px; text-align: center;">
+      <div class="modal-header" style="justify-content: flex-end; border-bottom: none; padding-bottom: 0;">
+        <button class="modal-close" onclick="closeAllModals()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="modal-body" style="padding-top: 0;">
+        <img src="assets/images/logo.png" alt="Blossom Psychotherapy" style="width: 74px; height: 74px; border-radius: 50%; box-shadow: 0 6px 18px var(--primary-glow); border: 2px solid var(--border-light); margin: 0 auto 16px; display: block;">
+        <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--text-primary); margin-bottom: 8px;">
+          Booking Request Ready!
+        </h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); margin-bottom: 20px;">
+          Your appointment request with <strong>Shaanthini Jayaprakash</strong> has been generated. Click below to send your slot details directly to her WhatsApp:
+        </p>
+
+        <!-- Summary Box -->
+        <div id="bookingSummaryBox" style="background: var(--bg-soft); border: 1.5px solid var(--border-light); border-radius: var(--radius-md); padding: 18px; text-align: left; margin-bottom: 22px; font-size: 0.9rem; line-height: 1.7;">
+          <!-- Dynamically populated -->
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <a id="whatsappDispatchBtn" href="#" target="_blank" class="btn btn-primary btn-lg" style="background: #25d366; border: none; font-size: 1rem; width: 100%;">
+            <i class="fab fa-whatsapp" style="font-size: 1.25rem;"></i> Send to Shaanthini on WhatsApp
+          </a>
+          <a id="emailDispatchBtn" href="#" class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">
+            <i class="fas fa-envelope"></i> Send via Email (blossomtherapy06@gmail.com)
+          </a>
+        </div>
+        
+        <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 14px;">
+          <i class="fas fa-shield-alt"></i> 100% Direct & Confidential. Connected directly to +91 97896 80259.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 20. FLOATING QUICK 3D WIDGETS ==================== -->
+  <!-- Floating Theme Orb -->
+  <button class="floating-theme-orb" id="floatingThemeOrb" aria-label="Toggle Theme Palette" title="Click to cycle themes">
+    <i class="fas fa-palette"></i>
+  </button>
+
+  <!-- Floating Zen Breathing Button -->
+  <button class="floating-zen-btn" id="zenBreatheTrigger" aria-label="Zen Mindfulness Tool" title="Take a 30s Calm Breath">
+    <i class="fas fa-spa"></i> <span>Zen Breathe</span>
+  </button>
+
+  <!-- ==================== 21. MODAL: 3D ZEN BREATHING GUIDE ==================== -->
+  <div class="zen-breathing-overlay" id="zenBreathingOverlay">
+    <div class="zen-breathing-card">
+      <button class="modal-close" id="zenCloseBtn" style="position: absolute; top: 16px; right: 18px;"><i class="fas fa-times"></i></button>
+      <span class="section-tag" style="display: inline-block; margin-bottom: 8px;">Mindfulness Oasis</span>
+      <h3 class="zen-phase-title" id="zenPhaseTitle">Breathe In Slowly</h3>
+      <p class="zen-phase-sub" id="zenPhaseSub">Feel the calm energy filling your mind</p>
+
+      <div class="zen-breathing-stage" id="zenBreathingStage">
+        <div class="zen-ripple-ring zen-ripple-3"></div>
+        <div class="zen-ripple-ring zen-ripple-2"></div>
+        <div class="zen-ripple-ring zen-ripple-1"></div>
+        <div class="zen-orb-center">
+          <i class="fas fa-spa" style="font-size: 1.5rem; margin-bottom: 4px;"></i>
+          <strong id="zenSecondsDisplay" style="font-size: 1.15rem;">4s</strong>
+        </div>
+      </div>
+
+      <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.6;">
+        <i class="fas fa-shield-alt"></i> Clinically proven Box Breathing (4-4-4-4) to lower cortisol & anxiety in 60 seconds.
+      </p>
+
+      <div class="zen-counter-pills">
+        <span class="zen-pill active"></span>
+        <span class="zen-pill"></span>
+        <span class="zen-pill"></span>
+        <span class="zen-pill"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: Supabase Cloud Database, 3D Engine & Main App -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase-client.js?v=1.0"></script>
+  <script src="js/three.min.js"></script>
+  <script src="js/animations-3d.js?v=4.0"></script>
+  <script src="js/app.js?v=4.0"></script>
+</body>
+</html>
